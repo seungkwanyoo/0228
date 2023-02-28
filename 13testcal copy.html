@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+<style>  
+   * {  font-size: 14pt; }
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(function(){
+   
+    $('#btnadd').click(function(){
+        
+        if($('#su1').val()==0 || $('#su2').val()==0){alert('숫자를 입력하세요')}
+        let num1 = parseInt($('#su1').val());
+        let num2 = parseInt($('#su2').val());
+    
+        $('#display').html(num1+num2);
+    });
+    $('#btnsub').click(function(){
+
+        if($('#su1').val()==0 || $('#su2').val()==0){alert('숫자를 입력하세요')}
+        let num1 = parseInt($('#su1').val());
+        let num2 = parseInt($('#su2').val());
+
+        $('#display').html(num1-num2);
+    });
+    $('#btnmul').click(function(){
+        if($('#su1').val()==0 || $('#su2').val()==0){alert('숫자를 입력하세요')}
+        let num1 = parseInt($('#su1').val());
+        let num2 = parseInt($('#su2').val());
+
+        $('#display').html(num1*num2);
+    });
+    $('#btnmok').click(function(){
+        if($('#su1').val()==0 || $('#su2').val()==0){alert('숫자를 입력하세요')}
+        let num1 = parseInt($('#su1').val());
+        let num2 = parseInt($('#su2').val());
+
+        $('#display').html(num1/num2);
+    });
+
+});
+
+
+
+</script>
+</head>
+<body>
+    <h2> 13testcal.html </h2>
+    <form name="myform" id="myform">
+        숫자1: <input type="text" name="su1" id="su1"> <br>
+        숫자2: <input type="text" name="su2" id="su2"> <br>
+             <input type="button" value="더하기" name="btnadd" id="btnadd">
+             <input type="button" value="빼기" name="btnsub" id="btnsub">
+             <input type="button" value="곱하기" name="btnmul" id="btnmul">
+             <input type="button" value="몫" name="btnmok" id="btnmok">
+    </form>
+    <div id="display"></div>
+</body>
+</html> 

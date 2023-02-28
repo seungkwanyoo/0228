@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+<style>  
+   * {  font-size: 14pt; }
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+function mycal(){
+    let su3 = myform.su1.value;
+    let su4 = myform.su2.value;
+    let num1 = parseInt(su3);
+    let num2 = parseInt(su4);
+
+    let hap = num1+num2;
+    let bbae = num1-num2;
+    let gob = num1*num2;
+    let mok = num1/num2;
+
+    document.getElementById('display').innerHTML=hap;
+}//end
+function mycal1(){
+    let su3 = myform.su1.value;
+    let su4 = myform.su2.value;
+    let num1 = parseInt(su3);
+    let num2 = parseInt(su4);
+
+    let hap = num1+num2;
+    let bbae = num1-num2;
+    let gob = num1*num2;
+    let mok = num1/num2;
+
+    document.getElementById('display').innerHTML=bbae;
+}//end
+function mycal2(){
+    let su3 = myform.su1.value;
+    let su4 = myform.su2.value;
+    let num1 = parseInt(su3);
+    let num2 = parseInt(su4);
+
+    let hap = num1+num2;
+    let bbae = num1-num2;
+    let gob = num1*num2;
+    let mok = num1/num2;
+
+    document.getElementById('display').innerHTML=gob;
+}//end
+function mycal3(){
+    let su3 = myform.su1.value;
+    let su4 = myform.su2.value;
+    let num1 = parseInt(su3);
+    let num2 = parseInt(su4);
+
+    let hap = num1+num2;
+    let bbae = num1-num2;
+    let gob = num1*num2;
+    let mok = num1/num2;
+
+    document.getElementById('display').innerHTML=mok;
+}//end
+</script>
+</head>
+<body>
+    <h2> 13testcal.html </h2>
+    <form name="myform" id="myform">
+        숫자1: <input type="text" name="su1" id="su1"> <br>
+        숫자2: <input type="text" name="su2" id="su2"> <br>
+             <input type="button" onclick="mycal()" value="더하기" name="btnadd" id="btnadd">
+             <input type="button" onclick="mycal1()" value="빼기" name="btnsub" id="btnsub">
+             <input type="button" onclick="mycal2()" value="곱하기" name="btnmul" id="btnmul">
+             <input type="button" onclick="mycal3()" value="몫" name="btnmok" id="btnmok">
+    </form>
+    <div id="display"></div>
+</body>
+</html> 
