@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+<style>  
+   * {  font-size: 14pt; }
+   .tt {
+    margin-left: 60px;
+    margin-top: 10px;
+   }
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$(function(){
+   
+    $('#btnadd').click(function(){
+        let num1 = $('#su1').val(); 
+        let num2 = $('#su2').val();
+        let plus = parseInt(num1)+parseInt(num2);
+        if(num1=='' || num2==''){alert('숫자를 입력하세요')}
+    
+        $('#display').html(plus);
+    });
+
+        
+    $('#su1').keyup(function(key){
+        let num1 = $('#su1').val();
+        if(key.keyCode == 13){
+            if(num1==''){
+                $('#Warn1').text('숫자를 입력하세요').css('color','red');
+            }else{$('#su2').focus()}
+        }
+    });
+
+    $('#su2').keyup(function(key){
+        let num2 = $('#su2').val();
+        if(key.keyCode == 13){
+            if(num2==''){
+                $('#Warn2').text('숫자를 입력하세요').css('color','red');
+            }else{
+                $('#btnadd').trigger('click');  
+            }
+        }
+    });
+    $('#btnsub').click(function(){
+
+        let num1 = $('#su1').val(); 
+        let num2 = $('#su2').val();
+        let minus = parseInt(num1)-parseInt(num2);
+        if(num1=='' || num2==''){alert('숫자를 입력하세요')}
+
+        $('#display').html(minus);
+    });
+    $('#btnmul').click(function(){
+
+        let num1 = $('#su1').val(); 
+        let num2 = $('#su2').val();
+        let multi = parseInt(num1)*parseInt(num2);
+        if(num1=='' || num2==''){alert('숫자를 입력하세요')}
+
+        $('#display').html(multi);
+    });
+    $('#btnmok').click(function(){
+
+        let num1 = $('#su1').val(); 
+        let num2 = $('#su2').val();
+        let div = parseInt(num1)/parseInt(num2);
+        if(num1=='' || num2==''){alert('숫자를 입력하세요')}
+
+        $('#display').html(div);
+    });
+
+});
+
+
+
+</script>
+</head>
+<body>
+    <h2> 13testcal.html </h2>
+    <form name="myform" id="myform">
+        숫자1: <input type="text" name="su1" id="su1"><span id="Warn1"></span> <br>
+        숫자2: <input type="text" name="su2" id="su2"><span id="Warn2"></span> <br>
+             <div class="tt">
+             <input type="button" value="더하기" name="btnadd" id="btnadd">
+             <input type="button" value="빼기" name="btnsub" id="btnsub">
+             <input type="button" value="곱하기" name="btnmul" id="btnmul">
+             <input type="button" value="몫" name="btnmok" id="btnmok">
+             </div>
+    </form>
+    <div id="display"></div>
+</body>
+</html> 
